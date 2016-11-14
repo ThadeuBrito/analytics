@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Analytics by ThadeuBrito</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Analytics</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/ThadeuBrito/analytics" class="btn">View on GitHub</a>
+      <a href="https://github.com/ThadeuBrito/analytics/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/ThadeuBrito/analytics/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="analyticsjs--" class="anchor" href="#analyticsjs--" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Analytics.js  <a href="https://circleci.com/gh/chute/analytics.js"><img src="https://circleci.com/gh/chute/analytics.js.png?circle-token=4279c66ee88214682e1ee342b15f984129b405d8" alt="Status"></a>
+</h1>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting started</h2>
+
+<p>Install Analytics.js</p>
+
+<ul>
+<li>
+<p>via Bower:</p>
+
+<div class="highlight highlight-source-shell"><pre>bower install git@github.com:chute/analytics.js.git --save</pre></div>
+
+<p>Then, include it into your project. In AMD-enabled environments:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">require</span>.<span class="pl-en">configure</span>({
+  paths<span class="pl-k">:</span> {
+    <span class="pl-s"><span class="pl-pds">'</span>analytics<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>PATH_TO/analytics<span class="pl-pds">'</span></span>
+  }
+});
+
+<span class="pl-c1">require</span>([<span class="pl-s"><span class="pl-pds">'</span>analytics<span class="pl-pds">'</span></span>], <span class="pl-k">function</span>(<span class="pl-smi">Analytics</span>) {
+  <span class="pl-k">var</span> analytics <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Analytics</span>({
+    <span class="pl-c">// default params</span>
+  }, {
+    <span class="pl-c">// options</span>
+  });
+  <span class="pl-smi">analytics</span>.<span class="pl-en">trigger</span>(<span class="pl-k">...</span>);
+});</pre></div>
+</li>
+<li>
+<p>for all others:</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>//static.getchute.com/js/analytics/1/analytics.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+<span class="pl-s1">&lt;<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">  <span class="pl-k">var</span> analytics <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Chute.Analytics</span>({</span>
+<span class="pl-s1">    <span class="pl-c">// default params</span></span>
+<span class="pl-s1">  }, {</span>
+<span class="pl-s1">    <span class="pl-c">// options</span></span>
+<span class="pl-s1">  });</span>
+<span class="pl-s1">  <span class="pl-smi">analytics</span>.<span class="pl-en">trigger</span>(<span class="pl-k">...</span>);</span>
+<span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
+</li>
+</ul>
+
+<p>That's it, now you can use Analytics.js!</p>
+
+<h2>
+<a id="available-methods" class="anchor" href="#available-methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Available methods</h2>
+
+<p>Check out <a href="http://chute.github.io/analytics.js/docs.html">documentation</a>.</p>
+
+<h1>
+<a id="contribution-guidelines" class="anchor" href="#contribution-guidelines" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contribution guidelines</h1>
+
+<p>If you would like to contribute, please, do the following:</p>
+
+<ol>
+<li>Clone <a href="https://github.com/chute/analytics.js">chute/analytics.js</a> repository from GitHub.</li>
+<li>Create a new branch with an explanationary name, like features/track-something-new.</li>
+<li>After you are done with the implementation, make sure to write tests for it.</li>
+<li>Push your branch to the GitHub and create a new pull request describing what you've done.</li>
+<li>You are responsible for integrating your changes into the master branch.</li>
+</ol>
+
+<h2>
+<a id="tests" class="anchor" href="#tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tests</h2>
+
+<p>Analytics.js has a complete test coverage. Tests use Jasmine and <a href="http://karma-runner.github.io/">Karma</a> for running them. To run tests:</p>
+
+<pre><code>npm test
+</code></pre>
+
+<p>If you want to run your tests on any of the BrowserStack browsers, add your credentials as env vars:</p>
+
+<pre><code>BROWSER_STACK_USERNAME
+BROWSER_STACK_ACCESS_KEY
+</code></pre>
+
+<h2>
+<a id="releasing-a-version" class="anchor" href="#releasing-a-version" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Releasing a version</h2>
+
+<p>We use <a href="https://github.com/vojtajina/grunt-bump">grunt-bump</a>.
+You should also update <code>Changelog.md</code> -- you can generate updates from commits using <a href="https://github.com/btford/grunt-conventional-changelog">grunt-conventional-changelog</a> (see <a href="https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#heading=h.em2hiij8p46d">conventions</a>).</p>
+
+<p>A typical release workflow would be:</p>
+
+<div class="highlight highlight-source-shell"><pre>grunt bump-only    <span class="pl-c"># (or `bump-only:minor` or `:major`) increase version</span>
+grunt changelog    <span class="pl-c"># generate changelog updates</span>
+<span class="pl-c"># edit changelog</span>
+grunt bump-commit  <span class="pl-c"># commit, tag, push</span></pre></div>
+
+<p>Finally, deploy a new version to CDN:</p>
+
+<div class="highlight highlight-source-shell"><pre>grunt deploy</pre></div>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/ThadeuBrito/analytics">Analytics</a> is maintained by <a href="https://github.com/ThadeuBrito">ThadeuBrito</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
